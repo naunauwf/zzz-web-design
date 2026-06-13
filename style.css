@@ -15,6 +15,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 #main {
   margin: 16px;
   overflow: hidden;
@@ -191,11 +195,86 @@ hr {
 }
 
 .footer-content {
-  font-size: 84px;
-  line-height: 148px;
+  /* font-size: 84px; */
+  font-size: clamp(5rem, 15.5vw, 168px);
+  /* line-height: 148px;  */
+  line-height: 0.9;
   color: var(--primary-black-navbar);
+  margin-left: -0.055em; /* relative offset to align visual edge of 'N' with container */
+  /* margin-left: -9px; */
+  letter-spacing: -0.13rem;
+}
+
+.footer-content h1 {
+  font-size: inherit;
+  font-weight: 700;
+  margin: 0;
+  line-height: inherit;
 }
 
 .footer-content span {
   display: block;
+}
+
+/* responsive layou */
+@media (max-width: 768px) {
+  .mid-nav {
+    display: none;
+  }
+
+  .title-header {
+    text-wrap: nowrap;
+    font-size: 3.3rem;
+  }
+
+  .spin-text {
+    right: 26px;
+    top: -22px;
+  }
+
+  .spin-text span {
+    font-size: 0.66rem;
+  }
+
+  .spin-text span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-20px) rotate(8deg);
+  }
+  .spin-text span:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(45deg) translateY(-20px);
+  }
+  .spin-text span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(90deg) translateY(-20px)
+      rotate(8deg);
+  }
+  .spin-text span:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(135deg) translateY(-20px)
+      rotate(2.5deg);
+  }
+  .spin-text span:nth-child(5) {
+    transform: translate(-50%, -50%) rotate(180deg) translateY(-20px);
+  }
+  .spin-text span:nth-child(6) {
+    transform: translate(-50%, -50%) rotate(225deg) translateY(-20px)
+      rotate(4.5deg);
+  }
+  .spin-text span:nth-child(7) {
+    transform: translate(-50%, -50%) rotate(270deg) translateY(-20px);
+  }
+  .spin-text span:nth-child(8) {
+    transform: translate(-50%, -50%) rotate(315deg) translateY(-20px)
+      rotate(4.5deg);
+  }
+
+  .middle-text {
+    font-size: 0.9rem;
+  }
+
+  .footer-content {
+    /* Fluid typography is already handled by the clamp() in the main rule */
+    margin: 3rem auto;
+  }
+
+  .footer-content hr {
+    margin: 3rem auto;
+  }
 }
